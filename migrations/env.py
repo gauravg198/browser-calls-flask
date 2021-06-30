@@ -19,8 +19,9 @@ logger = logging.getLogger('alembic.env')
 # target_metadata = mymodel.Base.metadata
 from flask import current_app
 
+print("config", current_app.config.get('SQLALCHEMY_DATABASE_URI'))
 config.set_main_option(
-    'sqlalchemy.url', current_app.config.get('SQLALCHEMY_DATABASE_URI')
+    'sqlalchemy.url', 'sqlite:///app.db'
 )
 target_metadata = current_app.extensions['migrate'].db.metadata
 

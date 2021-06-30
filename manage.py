@@ -25,7 +25,7 @@ def test():
 @manager.command
 def dbseed():
     ticket1 = SupportTicket(
-        name="John", phone_number="+15551239483", description="Got an issue while..."
+        name="gaurav", phone_number="+7760232955", description="Got an issue while..."
     )
     db.session.add(ticket1)
     db.session.commit()

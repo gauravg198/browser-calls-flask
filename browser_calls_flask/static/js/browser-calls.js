@@ -108,10 +108,12 @@ function callCustomer(phoneNumber) {
 
 /* Call the support_agent from the home page */
 function callSupport() {
-  updateCallStatus("Calling support...");
+  updateCallStatus("Calling support with params");
 
   // Our backend will assume that no params means a call to support_agent
-  device.connect();
+  var params = {"To": "12525016064", "Custom": "gaurav-twilio", "From": "client:gaurav"};
+  console.log("Calling support with params", params);
+  device.connect(params);
 }
 
 /* End a call */
